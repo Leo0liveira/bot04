@@ -1,0 +1,57 @@
+version: "3"  
+services:  
+
+  chatbot:
+    build:
+      context: .
+      dockerfile: Rasa.dockerfile
+    image: sprint04-compass:rasaptbr
+    networks: 
+      - rasa-network
+    ports:   
+      - 5005:5005
+    depends_on:
+      - action-server
+    volumes:   
+      - ./:/app
+    public: true
+    command:
+      - run
+      - --enable-api
+      - --cors
+      - "*"
+      - --debug
+
+  action-server:  
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: sprint04-compass:rasabot 
+    container_name: currentweather
+    networks: 
+      - rasa-network
+    ports:  
+      - 5055:5055
+    volumes:  
+      - ./actions:/app/actions
+    command:  
+      - rasa
+      - run
+      - actions
+
+  web:
+    build:
+      context: ../WebBot
+      dockerfile: web.dockerfile
+    image: webchat
+    container_name: webchat-app
+    depends_on:
+      - "chatbot"
+    networks: 
+      - rasa-network
+    ports: 
+      - 3000:3000
+
+networks: 
+    rasa-network:
+        driver: bridge

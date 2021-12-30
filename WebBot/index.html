@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="https://npm-scalableminds.s3.eu-central-1.amazonaws.com/@scalableminds/chatroom@master/dist/Chatroom.css" />
+  </head>
+  <body>
+    <!-- https://github.com/scalableminds/chatroom -->
+    <div class="chat-container"></div>
+    <script src="https://npm-scalableminds.s3.eu-central-1.amazonaws.com/@scalableminds/chatroom@master/dist/Chatroom.js"/></script>
+    <script type="text/javascript">
+      var chatroom = new window.Chatroom({
+        // https://chatbot-viniciusmarchi.cloud.okteto.net
+        host: "http://localhost:5005",
+        title: "Current Weather",
+        container: document.querySelector(".chat-container"),
+        welcomeMessage: "Oi",
+      });
+      chatroom.openChat();
+    </script>
+  </body>
+</html>
