@@ -12,8 +12,9 @@ services:
       - 5005:5005
     depends_on:
       - action-server
-    volumes:   
+    volumes:
       - ./:/app
+    public: true
     command:
       - run
       - --enable-api
