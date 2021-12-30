@@ -1,16 +1,16 @@
 version: "3"  
 services:  
 
-  chatbot:
+  rasabot:
     build:
       context: .
-      dockerfile: Rasa.dockerfile
+      dockerfile: ./Bot-04/Rasa.dockerfile
     networks: 
       - rasa-network
     ports:   
       - 5005:5005
     depends_on:
-      - action-server
+      - action-Server
     volumes:
       - ./:/app
     public: true
@@ -21,18 +21,18 @@ services:
       - "*"
       - --debug
 
-  action-server:  
+  action-Server:  
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: ./Bot-04/Dockerfile
     image: sprint04-compass:rasabot 
-    container_name: currentweather
+    container_name: Current-Weather
     networks: 
       - rasa-network
     ports:  
       - 5055:5055
     volumes:  
-      - ./actions:/app/actions
+      - ../actions:/app/actions
     command:  
       - rasa
       - run
@@ -40,12 +40,12 @@ services:
 
   web:
     build:
-      context: ../WebBot
+      context: ./WebBot
       dockerfile: web.dockerfile
     image: webchat
     container_name: webchat-app
     depends_on:
-      - "chatbot"
+      - "rasabot"
     networks: 
       - rasa-network
     ports: 
