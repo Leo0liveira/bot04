@@ -3,10 +3,13 @@ version: "3.0"
 nlu:
 - intent: greet
   examples: |
+    - Olá
     - Ola
-    - Oi
     - Oie
+    - Oi
     - Ei
+    - E ai
+    - Beleza ? 
     - Bom dia
     - Boa tarde
     - Boa noite
@@ -14,69 +17,255 @@ nlu:
 - intent: goodbye
   examples: |
     - Adeus
-    - Te vejo mais tarde
-    - Boa noite
-    - Tchau
-    - Tenha um ótimo dia
-    - Te vejo por ai
-    - Muito Obrigado
+    - Até a próxima
+    - Ate a proxima
+    - Até logo
+    - Ate logo
+    - Até mais
+    - Até mais 
+    - Até breve
+    - Ate breve
+    - Muito obrigado
+    - Valeu
     - Obrigado
+    - Tchau
     - Tchau tchau
-
-# - intent: request_history
-#   examples: |
-#     - Mostre o historico
-#     - Me mostre o historico de busca
-#     - Quero ver as buscas anteriores
-#     - Buscas anteriores
-#     - Pode me mostrar o historico de busca ?
-#     - Historico de buscas, por favor
-
+    
 - intent: ask_weather
   examples: |
     - Como está o tempo ?
+    - Como está o clima ?
     - Como está o tempo hoje?
-    - Diga-me a previsão do tempo
+    - Como está o clima hoje?
+    - Diga-me como está o tempo agora? 
+    - Diga-me como está o clima agora? 
     - Quero saber como ta o clima
-    - Eu quero saber como está o tempo de hoje
-    - Previsão do tempo
+    - Quero saber como ta o tempo
     - Como esta o clima na minha cidade?
-    - Previsao do tempo
+    - Como esta o tempo na minha cidade?
+    - Tempo agora
+    - Clima agora
 
 - intent: inform_city
   examples: |
-    - Minha cidade é [Três Lagoas](location)
-    - Eu estou em [Campo Grande](location)
-    - Sou de [Porto Alegre](location)
-    - A cidade é [Veneza](location)
-    - Minha localização é [Paris](location)
+    - Quero ver a cidade de [Tres Lagoas](location)
+    - Quero ver a cidade de [Navirai](location)
+    - Quero ver a cidade de [Campo Grande](location)
+    - Quero ver a cidade de [Porto Alegre](location)
+    - Quero ver a cidade de [Campinas](location)
+    - Quero ver a cidade de [Ubatuba](location)
+    - Quero ver a cidade de [Santos](location)
+    - Quero ver a cidade de [Florianopolis](location)
+    - Quero ver a cidade de [Palmas](location)
+    - Quero ver a cidade de [Rio de Janeiro](location)
+    - Quero ver a cidade de [Sao Paulo](location)
+    - Quero ver a cidade de [Andradina](location)
+    - Quero ver a cidade de [Aracatuba](location)
+    - Quero ver a cidade de [Araraquara](location)
+    - Quero ver a cidade de [Sao Jose do Rio Preto](location)
+    - Me mostre o clima em [Tres Lagoas](location)
+    - Me mostre o clima em [Navirai](location)
+    - Me mostre o clima em [Campo Grande](location)
+    - Me mostre o clima em [Porto Alegre](location)
+    - Me mostre o clima em [Campinas](location)
+    - Me mostre o clima em [Ubatuba](location)
+    - Me mostre o clima em [Santos](location)
+    - Me mostre o clima em [Florianopolis](location)
+    - Me mostre o clima em [Palmas](location)
+    - Me mostre o clima em [Rio de Janeiro](location)
+    - Me mostre o clima em [Sao Paulo](location)
+    - Me mostre o clima em [Andradina](location)
+    - Me mostre o clima em [Aracatuba](location)
+    - Me mostre o clima em [Araraquara](location)
+    - Me mostre o clima em [Sao Jose do Rio Preto](location)
+    - A cidade é [Tres Lagoas](location)
+    - A cidade é [Navirai](location)
+    - A cidade é [Campo Grande](location)
+    - A cidade é [Porto Alegre](location)
+    - A cidade é [Campinas](location) 
+    - A cidade é [Ubatuba](location)
+    - A cidade é [Santos](location)
+    - A cidade é [Florianopolis](location)
+    - A cidade é [Palmas](location)
+    - A cidade é [Rio de Janeiro](location)
+    - A cidade é [Sao Paulo](location)
+    - A cidade é [Andradina](location)
+    - A cidade é [Aracatuba](location)
+    - A cidade é [Araraquara](location)
+    - A cidade é [Sao Jose do Rio Preto](location)
+    - Quero ver o clima em [Tres Lagoas](location)
+    - Quero ver o clima em [Navirai](location)
+    - Quero ver o clima em [Campo Grande](location)
+    - Quero ver o clima em [Porto Alegre](location)
+    - Quero ver o clima em [Campinas](location)
+    - Quero ver o clima em [Ubatuba](location)
+    - Quero ver o clima em [Santos](location)
+    - Quero ver o clima em [Florianopolis](location)
+    - Quero ver o clima em [Palmas](location)
+    - Quero ver o clima em [Rio de Janeiro](location)
+    - Quero ver o clima em [Sao Paulo](location)
+    - Quero ver o clima em [Andradina](location)
+    - Quero ver o clima em [Aracatuba](location)
+    - Quero ver o clima em [Araraquara](location)
+    - Quero ver o clima em [Sao Jose do Rio Preto](location)
+    - Clima na localização de [Tres Lagoas](location)
+    - Clima na localização de [Navirai](location)
+    - Clima na localização de [Campo Grande](location)
+    - Clima na localização de [Porto Alegre](location)
+    - Clima na localização de [Campinas](location)
+    - Clima na localização de [Ubatuba](location)
+    - Clima na localização de [Santos](location)
+    - Clima na localização de [Florianopolis](location)
+    - Clima na localização de [Palmas](location)
+    - Clima na localização de [Rio de Janeiro](location)
+    - Clima na localização de [Sao Paulo](location)
+    - Clima na localização de [Andradina](location)
+    - Clima na localização de [Aracatuba](location)
+    - Clima na localização de [Araraquara](location)
+    - Clima na localização de [Sao Jose do Rio Preto](location)
+    - Quero saber o clima de [Tres Lagoas](location)
+    - Quero saber o clima de [Navirai](location)
+    - Quero saber o clima de [Campo Grande](location)
+    - Quero saber o clima de [Porto Alegre](location)
+    - Quero saber o clima de [Campinas](location)
+    - Quero saber o clima de [Ubatuba](location)
+    - Quero saber o clima de [Santos](location)
+    - Quero saber o clima de [Florianopolis](location)
+    - Quero saber o clima de [Palmas](location)
     - Quero saber o clima de [Rio de Janeiro](location)
-    - Estou na cidade de [Palmas](location)
-    - Minha cidade é [Campina Grande](location)
-    - Quero saber como está o clima em [Paris](location)
-    - [São Paulo](location)
+    - Quero saber o clima de [Sao Paulo](location)
+    - Quero saber o clima de [Andradina](location)
+    - Quero saber o clima de [Aracatuba](location)
+    - Quero saber o clima de [Araraquara](location)
+    - Quero saber o clima de [Sao Jose do Rio Preto](location)
+    - Quero saber como está o clima em [Tres Lagoas](location)
+    - Quero saber como está o clima em [Navirai](location)
+    - Quero saber como está o clima em [Campo Grande](location)
+    - Quero saber como está o clima em [Porto Alegre](location)
+    - Quero saber como está o clima em [Campinas](location)
+    - Quero saber como está o clima em [Ubatuba](location)
+    - Quero saber como está o clima em [Santos](location)
+    - Quero saber como está o clima em [Florianopolis](location)
+    - Quero saber como está o clima em [Palmas](location)
+    - Quero saber como está o clima em [Rio de Janeiro](location)
+    - Quero saber como está o clima em [Sao Paulo](location)
+    - Quero saber como está o clima em [Andradina](location)
+    - Quero saber como está o clima em [Aracatuba](location)
+    - Quero saber como está o clima em [Araraquara](location)
+    - Quero saber como está o clima em [Sao Jose do Rio Preto](location)
+    - [Tres Lagoas](location)
+    - [Navirai](location)
+    - [Campo Grande](location)
+    - [Porto Alegre](location)
+    - [Campinas](location)
+    - [Ubatuba](location)
+    - [Santos](location)
+    - [Florianopolis](location)
+    - [Palmas](location)
+    - [Rio de Janeiro](location)
+    - [Sao Paulo](location)
+    - [Andradina](location)
+    - [Aracatuba](location)
+    - [Araraquara](location)
+    - [Sao Jose do Rio Preto](location)
 
 - intent: inform_nome
   examples: |
-    - Eu sou o [Leonardo Oliveira](name)
-    - Meu nome é [Lucas Paulo Jr](name)
-    - Pode me chamar de [Gabriel Borges](name)
-    - Prazer, [Maria Eduarda](name)
-    - [Walter](name)
-    - Eu sou a [Cristiane](name)
-    - Meu nome é [Danielle Silva Pereira Santos](name)
+    - Eu sou o [Luis](name)
+    - Eu sou o [Leo](name)
+    - Eu sou o [Leonardo](name)
+    - Eu sou o [Guilherme](name)
+    - Eu sou a [Marina](name)
+    - Eu sou a [Ana Luisa](name)
+    - Eu sou o [Gustavo](name)
+    - Eu sou o [Lucas Felipe](name)
+    - Eu sou o [Jõao da Silva](name)
+    - Eu sou o [José Augusto](name)
+    - Eu sou o [André](name)
+    - Eu sou o [Ricardo Henrique](name)
+    - Eu sou a [Claudia](name)
+    - Eu sou a [Sofia Oliveira](name)
+    - Eu sou a [Isabela Dantas](name)
+    - Meu nome é [Luis](name)
+    - Meu nome é [Leo](name)
+    - Meu nome é [Leonardo](name)
+    - Meu nome é [Guilherme](name)
+    - Meu nome é [Marina](name)
+    - Meu nome é [Ana Luisa](name)
+    - Meu nome é [Gustavo](name)
+    - Meu nome é [Lucas Felipe](name)
+    - Meu nome é [João da Silva](name)
+    - Meu nome é [José Augusto](name)
+    - Meu nome é [André](name)
+    - Meu nome é [Ricardo Henrique](name)
+    - Meu nome é [Claudia](name)
+    - Meu nome é [Sofia Oliveira](name)
+    - Meu nome é [Isabela Dantas](name)
+    - Pode me chamar de [Luis](name)
+    - Pode me chamar de [Leo](name)
+    - Pode me chamar de [Leonardo](name)
+    - Pode me chamar de [Guilherme](name)
+    - Pode me chamar de [Marina](name)
+    - Pode me chamar de [Ana Luisa](name)
+    - Pode me chamar de [Gustavo](name)
+    - Pode me chamar de [Lucas Felipe](name)
+    - Pode me chamar de [João da Silva](name)
+    - Pode me chamar de [José Augusto](name)
+    - Pode me chamar de [André](name)
+    - Pode me chamar de [Ricardo Henrique](name)
+    - Pode me chamar de [Claudia](name)
+    - Pode me chamar de [Sofia Oliveira](name)
+    - Pode me chamar de [Isabela Dantas](name)
+    - Prazer, [Luis](name)
+    - Prazer, [Leo](name)
+    - Prazer, [Leonardo](name)
+    - Prazer, [Guilherme](name)
+    - Prazer, [Marina](name)
+    - Prazer, [Ana Luisa](name)
     - Prazer, [Gustavo](name)
-    - [Samuel Jackson](name)
+    - Prazer, [Lucas Felipe](name)
+    - Prazer, [João da Silva](name)
+    - Prazer, [José Augusto](name)
+    - Prazer, [André](name)
+    - Prazer, [Ricardo Henrique](name)
+    - Prazer, [Claudia](name)
+    - Prazer, [Sofia Oliveira](name)
+    - Prazer, [Isabela Dantas](name)
+    - [Luis](name)
+    - [Leo](name)
+    - [Leonardo](name)
+    - [Guilherme](name)
+    - [Marina](name)
+    - [Ana Luisa](name)
+    - [Gustavo](name)
+    - [Lucas Felipe](name)
+    - [João da Silva](name)
+    - [José Augusto](name)
+    - [André](name)
+    - [Ricardo Henrique](name)
+    - [Claudia](name)
+    - [Sofia Oliveira](name)
+    - [Isabela Dantas](name)
 
 - intent: deny
   examples: |
     - Não
     - Não, muito obrigado
+    - Acho que não
 
 - intent: affirm
   examples: |
     - Sim
+    - Sim, por favor
     - Por favor
     - Quero
+    - Isso mesmo
+
+- intent: number_Serie
+  examples: |
+    - Me diga seu numero de serie
+    - Quero saber seu numero de serie
+    - Fala seu numero de serie
+    - Numero de serie
 
     

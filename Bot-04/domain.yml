@@ -4,11 +4,11 @@ intents:
 - greet
 - goodbye
 - ask_weather
-# - request_history
 - inform_city
 - inform_nome
 - deny
 - affirm
+- number_Serie
 
 entities:
 - name
@@ -41,34 +41,33 @@ actions:
   - utter_temp
   - utter_ask_name
   - utter_deny
+  - utter_number
   - affirm
   - deny
   - city
-  - utter_check_again
   - action_weather_api
-  # - action_show_history
 
 responses:
   utter_greet:
-    - text: "Olá, eu sou um chatbot desenvolvido durante o programa de bolsas da Compass UOL, o que você deseja? "
+    - text: "Olá, eu um chatbot desenvolvido durante o programa de bolsa da Compass Uol, eu posso te mostrar a temperatura em qualquer cidade do nosso planeta, o que você deseja ? "
 
   utter_ask_name:
-    - text: "Tudo bem, mas antes poderia me informar seu nome, por gentileza? "
+    - text: "Certo, mas antes poderia me informar seu nome, por gentileza? "
 
   utter_ask_location:
-    - text: "E qual cidade deseja buscar? "
+    - text: "Anotado! Qual cidade você quer buscar? "
   
   utter_temp:
     - text: "{weather_data}"
 
   utter_deny:
-    - text: "Desculpe, não foi possível encontrar esta cidade."
+    - text: "Desculpe, não consegui encontrar esta cidade."
+  
+  utter_number:
+    - text: "Meu número de série é 4 8 15 23 42 🤖 "
 
   utter_goodbye:
-    - text: "Até mais! Tenha uma ótima semana!"
-
-  utter_check_again:
-    - text: "Deseja mais checar mais alguma cidade? "
+    - text: "Até a próxima!"
 
 session_config:
   session_expiration_time: 60

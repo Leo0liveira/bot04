@@ -17,16 +17,19 @@ O chatbot construído tem como objetivo criar uma conversa com o usuário onde e
 * [CollectingDispatcher](https://rasa.com/docs/action-server/sdk-dispatcher/)
 * [PyMongo](https://pymongo.readthedocs.io/en/stable/)
 * [MongoClient](https://mongodb.github.io/node-mongodb-native/api-generated/mongoclient.html)
+* [Docker](https://docs.docker.com/)
+* [Kubernetes por meio do Okteto](https://kubernetes.io/docs/home/)
   
 ---
 
 ## Dependências
-* Rasa 3.0
-* Python 3.8
-* Pymongo 3.10.1 
+* Rasa
+* Python
+* Pymongo
 * MongoDB
 * Docker
-  
+* Kubernetes
+
 ---
 
 ## 🤖 Utilizando o Rasa ChatBot com MongoDB
@@ -48,11 +51,19 @@ Com a aplicação rodando, siga o seguinte fluxo:
 * Informe sua intensão
 * Informe seu nome
 * Informe a cidade que deseja conferir a temperatura
+
+O nome e a cidade buscada pela usuário ficam guardados em um banco de dados, junto com os resultados da pesquisa pela cidade.
 ---
 
 ## 🐳 Docker
 
-A aplicação não está funcionando corretamente com docker-compose, um problema no arquivo persiste até agora. Mas assim que for solucionado bastará ao usuário digitar "docker-compose run -u " root" rasa" no console de preferência e a aplicação estará funcional, sem o uso dos outros comandos.
+A partir de agora bastará ao usuário digitar o seguinte comando no terminal da aplicação "docker-compose run -u " root" rasa" no console de preferência e a aplicação estará funcional, sem o uso dos outros comandos.
+
+---
+
+## ⚓Kubernetes & Okteto
+
+Graças ao desenvolvimento do arquivo docker-compose, foi possível realizar o deploy e acessar a aplicação na plataforma Okteto, [clicando aqui](https://).
 
 ## Desenvolvido por 
 - 👨‍💻 Leonardo Oliveira

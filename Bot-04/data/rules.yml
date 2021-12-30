@@ -1,15 +1,11 @@
 version: "3.0"
 
 rules:
+
   - rule: Say goodbye anytime the user says goodbye
     steps:
       - intent: goodbye
       - action: utter_goodbye
-
-  # - rule: Show history anytime the user says history
-  #   steps:
-  #     - intent: request_history
-  #     - action: action_show_history
 
   - rule: Activate form
     steps:
@@ -28,3 +24,9 @@ rules:
       - action: action_weather_api
       - intent: goodbye
       - action: utter_goodbye
+
+  - rule: Say your serie number always
+    steps:
+      - intent: number_Serie
+      - action: utter_number
+    
