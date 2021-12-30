@@ -10,7 +10,7 @@ services:
     ports:   
       - 5005:5005
     depends_on:
-      - action-Server
+      - action-server
     volumes:
       - ./:/app
     public: true
@@ -21,7 +21,7 @@ services:
       - "*"
       - --debug
 
-  action-Server:  
+  action-server:  
     build:
       context: .
       dockerfile: ./Bot-04/Dockerfile
