@@ -5,7 +5,6 @@ services:
     build:
       context: .
       dockerfile: Rasa.dockerfile
-    image: sprint04-compass:rasaptbr
     networks: 
       - rasa-network
     ports:   
