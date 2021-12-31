@@ -13,7 +13,6 @@ services:
       - action-server
     volumes:
       - ./Bot-04/:/app
-    public: true
     command:
       - run
       - --enable-api
@@ -45,7 +44,7 @@ services:
     networks: 
       - rasa-network
     ports: 
-      - 3000:3000
+      - 8080:8080
 
 networks: 
     rasa-network:
