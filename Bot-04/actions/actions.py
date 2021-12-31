@@ -23,6 +23,10 @@ class ActionWeatherApi(Action):
 
         collection = db['historico']
         return collection
+    
+    def insertDB():
+        insertDB = [{"nome": nome, "city": city, "response" : response}]
+        collection.insert_many(insertDB)
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
@@ -43,9 +47,7 @@ class ActionWeatherApi(Action):
             desc = format[0]['description'] 
             weather_data = "Neste momento está fazendo {}°C na cidade de {}, o tempo é {}. Obrigado por escolher nosso serviço {}. ".format(temp, place, desc, nome) 
             
-#             insertDB = [{"nome": nome, "city": city, "response" : response}]
-            
-#             collection.insert_many(insertDB)
+            insertDB()
             
             dispatcher.utter_message(weather_data) 
             
