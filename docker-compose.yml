@@ -13,6 +13,7 @@ services:
       - action-server
     volumes:
       - ./Bot-04/:/app
+    public: true
     command:
       - run
       - --enable-api
