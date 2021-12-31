@@ -19,8 +19,6 @@ services:
       - --enable-api
       - --cors
       - "*"
-      - --credentials
-      - credentials.yml
       - --debug
 
   action-server:  
