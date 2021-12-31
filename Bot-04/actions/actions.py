@@ -16,6 +16,14 @@ class ActionWeatherApi(Action):
     def name(self) -> Text:
         return "action_weather_api"
 
+    def connect():
+         client = MongoClient('mongodb+srv://leonardo:1234@weatherbot.g4oda.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
+
+         db = client['database']
+
+         collection = db['historico']
+        return collection
+
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:        
@@ -26,10 +34,6 @@ class ActionWeatherApi(Action):
         api_address = 'http://api.openweathermap.org/data/2.5/weather?units=metric&appid=0c42f7f6b53b244c78a418f4f181282a&lang=pt_br&q='
         url = api_address + city 
         response = requests.get(url).json()
-        
-        client = MongoClient('mongodb+srv://leonardo:1234@weatherbot.g4oda.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
-        db = client['database']
-        collection = db['historico']
         
         try:
             format = response['main'] 
