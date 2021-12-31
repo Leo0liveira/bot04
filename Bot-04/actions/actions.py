@@ -35,13 +35,13 @@ class ActionWeatherApi(Action):
             desc = format[0]['description'] 
             weather_data = "Neste momento está fazendo {}°C na cidade de {}, o tempo é {}. Obrigado por escolher nosso serviço {}. ".format(temp, place, desc, nome) 
             
-            client = MongoClient('mongodb+srv://leonardo:1234@weatherbot.g4oda.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
+#             client = MongoClient('mongodb+srv://leonardo:1234@weatherbot.g4oda.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
             
-            db = client['database']
-            collection = db['historico']
-            insertDB = [{"nome": nome, "city": city, "response" : response}]
+#             db = client['database']
+#             collection = db['historico']
+#             insertDB = [{"nome": nome, "city": city, "response" : response}]
             
-            collection.insert_many(insertDB)
+#             collection.insert_many(insertDB)
             
             dispatcher.utter_message(weather_data) 
             
