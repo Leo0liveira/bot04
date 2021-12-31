@@ -1,7 +1,41 @@
 version: "3.0"
-
 stories:
   - story: happy path 1
     steps:
       - intent: greet
       - action: utter_greet
+  - story: interactive_story_1
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: ask_weather
+    - action: location_form
+    - active_loop: location_form
+    - slot_was_set:
+      - requested_slot: name
+    - slot_was_set:
+      - name: Jonas
+    - slot_was_set:
+      - name: Jonas
+    - slot_was_set:
+      - requested_slot: location
+    - slot_was_set:
+      - location: Jundiai
+    - slot_was_set:
+      - location: Jundiai
+    - slot_was_set:
+      - requested_slot: null
+    - active_loop: null
+    - action: action_weather_api
+    - slot_was_set:
+      - location: Jundiai
+    - intent: goodbye
+    - action: utter_goodbye
+  - story: interactive_story_1
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: number_Serie
+    - action: utter_number
+    - intent: goodbye
+    - action: utter_goodbye

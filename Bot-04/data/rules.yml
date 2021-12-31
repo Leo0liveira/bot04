@@ -24,9 +24,4 @@ rules:
       - action: action_weather_api
       - intent: goodbye
       - action: utter_goodbye
-
-  - rule: Say your serie number always
-    steps:
-      - intent: number_Serie
-      - action: utter_number
     

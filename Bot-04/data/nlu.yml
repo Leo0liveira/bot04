@@ -1,5 +1,4 @@
 version: "3.0"
-
 nlu:
 - intent: greet
   examples: |
@@ -9,11 +8,10 @@ nlu:
     - Oi
     - Ei
     - E ai
-    - Beleza ? 
+    - Beleza ?
     - Bom dia
     - Boa tarde
     - Boa noite
-
 - intent: goodbye
   examples: |
     - Adeus
@@ -22,7 +20,6 @@ nlu:
     - Até logo
     - Ate logo
     - Até mais
-    - Até mais 
     - Até breve
     - Ate breve
     - Muito obrigado
@@ -30,22 +27,20 @@ nlu:
     - Obrigado
     - Tchau
     - Tchau tchau
-    
 - intent: ask_weather
   examples: |
     - Como está o tempo ?
     - Como está o clima ?
     - Como está o tempo hoje?
     - Como está o clima hoje?
-    - Diga-me como está o tempo agora? 
-    - Diga-me como está o clima agora? 
+    - Diga-me como está o tempo agora?
+    - Diga-me como está o clima agora?
     - Quero saber como ta o clima
     - Quero saber como ta o tempo
     - Como esta o clima na minha cidade?
     - Como esta o tempo na minha cidade?
     - Tempo agora
     - Clima agora
-
 - intent: inform_city
   examples: |
     - Quero ver a cidade de [Tres Lagoas](location)
@@ -82,7 +77,7 @@ nlu:
     - A cidade é [Navirai](location)
     - A cidade é [Campo Grande](location)
     - A cidade é [Porto Alegre](location)
-    - A cidade é [Campinas](location) 
+    - A cidade é [Campinas](location)
     - A cidade é [Ubatuba](location)
     - A cidade é [Santos](location)
     - A cidade é [Florianopolis](location)
@@ -112,14 +107,14 @@ nlu:
     - Clima na localização de [Navirai](location)
     - Clima na localização de [Campo Grande](location)
     - Clima na localização de [Porto Alegre](location)
-    - Clima na localização de [Campinas](location)
+    - Clima na localização de [Sao Jose dos Campos](location)
     - Clima na localização de [Ubatuba](location)
     - Clima na localização de [Santos](location)
     - Clima na localização de [Florianopolis](location)
     - Clima na localização de [Palmas](location)
     - Clima na localização de [Rio de Janeiro](location)
     - Clima na localização de [Sao Paulo](location)
-    - Clima na localização de [Andradina](location)
+    - Clima na localização de [Uberlandia](location)
     - Clima na localização de [Aracatuba](location)
     - Clima na localização de [Araraquara](location)
     - Clima na localização de [Sao Jose do Rio Preto](location)
@@ -168,7 +163,8 @@ nlu:
     - [Aracatuba](location)
     - [Araraquara](location)
     - [Sao Jose do Rio Preto](location)
-
+    - Quero saber como esta o clima em [Jundiai](location)
+    - Quero saber como esta o clima em [Joinville](location)
 - intent: inform_nome
   examples: |
     - Eu sou o [Luis](name)
@@ -246,13 +242,12 @@ nlu:
     - [Claudia](name)
     - [Sofia Oliveira](name)
     - [Isabela Dantas](name)
-
+    - Eu sou o [Jonas](name)
 - intent: deny
   examples: |
     - Não
     - Não, muito obrigado
     - Acho que não
-
 - intent: affirm
   examples: |
     - Sim
@@ -260,12 +255,9 @@ nlu:
     - Por favor
     - Quero
     - Isso mesmo
-
 - intent: number_Serie
   examples: |
     - Me diga seu numero de serie
     - Quero saber seu numero de serie
     - Fala seu numero de serie
     - Numero de serie
-
-    

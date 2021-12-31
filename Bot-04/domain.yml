@@ -1,26 +1,26 @@
 version: '3.0'
-
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
 intents:
+- number_Serie
 - greet
+- inform_nome
 - goodbye
 - ask_weather
 - inform_city
-- inform_nome
 - deny
 - affirm
-- number_Serie
-
 entities:
-- name
 - location
-
+- name
 slots:
   name:
-      type: text
-      mappings:
-        - type: from_entity
-          entity: name
-
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: name
   location:
     type: text
     influence_conversation: true
@@ -29,46 +29,35 @@ slots:
       entity: location
       conditions:
       - active_loop: location_form
-
+responses:
+  utter_greet:
+  - text: 'Olá, eu um chatbot desenvolvido durante o programa de bolsa da Compass Uol, eu posso te mostrar a temperatura em qualquer cidade do nosso planeta, o que você deseja ? '
+  utter_ask_name:
+  - text: 'Certo, mas antes poderia me informar seu nome, por gentileza? '
+  utter_ask_location:
+  - text: 'Anotado! Qual cidade você quer buscar? '
+  utter_temp:
+  - text: '{weather_data}'
+  utter_deny:
+  - text: Desculpe, não consegui encontrar esta cidade.
+  utter_number:
+  - text: 'Meu número de série é 4 8 15 23 42 🤖 '
+  utter_goodbye:
+  - text: Até a próxima!
+actions:
+- action_weather_api
+- affirm
+- city
+- deny
+- utter_ask_location
+- utter_ask_name
+- utter_deny
+- utter_goodbye
+- utter_greet
+- utter_number
+- utter_temp
 forms:
   location_form:
     required_slots:
     - name
     - location
-
-actions:
-  - utter_ask_location
-  - utter_temp
-  - utter_ask_name
-  - utter_deny
-  - utter_number
-  - affirm
-  - deny
-  - city
-  - action_weather_api
-
-responses:
-  utter_greet:
-    - text: "Olá, eu um chatbot desenvolvido durante o programa de bolsa da Compass Uol, eu posso te mostrar a temperatura em qualquer cidade do nosso planeta, o que você deseja ? "
-
-  utter_ask_name:
-    - text: "Certo, mas antes poderia me informar seu nome, por gentileza? "
-
-  utter_ask_location:
-    - text: "Anotado! Qual cidade você quer buscar? "
-  
-  utter_temp:
-    - text: "{weather_data}"
-
-  utter_deny:
-    - text: "Desculpe, não consegui encontrar esta cidade."
-  
-  utter_number:
-    - text: "Meu número de série é 4 8 15 23 42 🤖 "
-
-  utter_goodbye:
-    - text: "Até a próxima!"
-
-session_config:
-  session_expiration_time: 60
-  carry_over_slots_to_new_session: true
