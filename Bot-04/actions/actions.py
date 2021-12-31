@@ -15,20 +15,7 @@ class ActionWeatherApi(Action):
 
     def name(self) -> Text:
         return "action_weather_api"
-
-    def connect():
-        client = MongoClient('mongodb+srv://leonardo:1234@weatherbot.g4oda.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
-
-        db = client['database']
-
-        collection = db['historico']
-        return collection
     
-    def insert():
-        collection = connect()
-        insertDB = [{"nome": nome, "city": city, "response" : response}]
-        collection.insert_many(insertDB)
-
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:        
@@ -39,21 +26,20 @@ class ActionWeatherApi(Action):
         api_address = 'http://api.openweathermap.org/data/2.5/weather?units=metric&appid=0c42f7f6b53b244c78a418f4f181282a&lang=pt_br&q='
         url = api_address + city 
         response = requests.get(url).json()
-        
-        try:
-            format = response['main'] 
-            temp = int(format['temp']) 
-            place = response["name"] 
-            format = response['weather'] 
-            desc = format[0]['description'] 
-            weather_data = "Neste momento está fazendo {}°C na cidade de {}, o tempo é {}. Obrigado por escolher nosso serviço {}. ".format(temp, place, desc, nome) 
+
+        format = response['main'] 
+        temp = int(format['temp']) 
+        place = response["name"] 
+        format = response['weather'] 
+        desc = format[0]['description'] 
+        weather_data = "Neste momento está fazendo {}°C na cidade de {}, o tempo é {}. Obrigado por escolher nosso serviço {}. ".format(temp, place, desc, nome) 
             
-            insert()
+        client = MongoClient('mongodb+srv://leonardo:1234@weatherbot.g4oda.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
+        db = client['database']
+        collection = db['historico']
+        insertDB = [{"nome": nome, "city": city, "response" : response}]
+        collection.insert_many(insertDB)
             
-            dispatcher.utter_message(weather_data) 
-            
-        except:
-            dispatcher.utter_message(text=f"Desculpe {nome}, mas parece que a cidade de {city} não é válida, tente novamente.")
-            return [SlotSet("location", None)]
-        finally:
-            return [SlotSet("location", city)]
+        dispatcher.utter_message(weather_data) 
+
+        return [SlotSet("location", city)]
