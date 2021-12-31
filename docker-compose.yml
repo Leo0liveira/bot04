@@ -12,7 +12,7 @@ services:
     depends_on:
       - action-server
     volumes:
-      - ./:/app
+      - ./Bot-04/:/app
     public: true
     command:
       - run
@@ -32,7 +32,7 @@ services:
     ports:  
       - 5055:5055
     volumes:  
-      - "./actions:/app/actions"
+       - ./Bot-04/actions:/app/actions
 
   web:
     build:
