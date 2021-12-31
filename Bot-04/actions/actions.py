@@ -23,7 +23,7 @@ class ActionWeatherApi(Action):
         nome = tracker.get_slot("name")
         city = tracker.get_slot('location')
 
-        api_address = 'http://api.openweathermap.org/data/2.5/weather?units=metric&appid=0c42f7f6b53b244c78a418f4f181282a&lang=pt_br&q='
+        api_address = 'https://api.openweathermap.org/data/2.5/weather?units=metric&appid=0c42f7f6b53b244c78a418f4f181282a&lang=pt_br&q='
         url = api_address + city 
         response = requests.get(url).json()
         
