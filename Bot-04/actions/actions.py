@@ -47,9 +47,9 @@ class ActionWeatherApi(Action):
             
         except:
             dispatcher.utter_message(text=f"Desculpe {nome}, mas parece que a cidade de {city} não é válida, tente novamente.")
-                
-        finally:
             return [SlotSet("location", None)]
+        finally:
+            return [SlotSet("location", city)]
     
 # class ActionShowHistory(Action):
     
