@@ -17,11 +17,11 @@ class ActionWeatherApi(Action):
         return "action_weather_api"
 
     def connect():
-         client = MongoClient('mongodb+srv://leonardo:1234@weatherbot.g4oda.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
+        client = MongoClient('mongodb+srv://leonardo:1234@weatherbot.g4oda.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
 
-         db = client['database']
+        db = client['database']
 
-         collection = db['historico']
+        collection = db['historico']
         return collection
 
     def run(self, dispatcher: CollectingDispatcher,
