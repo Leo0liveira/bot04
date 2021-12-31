@@ -1,7 +1,7 @@
 version: "3"  
 services:  
 
-  rasabot:
+  chatbot:
     build:
       context: .
       dockerfile: ./Bot-04/Rasa.dockerfile
@@ -13,7 +13,6 @@ services:
       - action-server
     volumes:
       - ./:/app
-    public: true
     command:
       - run
       - --enable-api
@@ -41,7 +40,7 @@ services:
     image: webchat
     container_name: webchat-app
     depends_on:
-      - "rasabot"
+      - "chatbot"
     networks: 
       - rasa-network
     ports: 
