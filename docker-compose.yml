@@ -13,6 +13,7 @@ services:
       - action-server
     volumes:
       - ./:/app
+    public: true
     command:
       - run
       - --enable-api
